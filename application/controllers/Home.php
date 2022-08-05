@@ -6,10 +6,10 @@ class Home extends CI_Controller {
 
 	public function __construct() {
         parent::__construct();
-		if ($this->session->userdata('id_user') == false) {
-			$this->session->set_flashdata("msg", "<div class='alert alert-danger'>Opss anda blm login</div>");
-            redirect('auth');
-		}
+		// if ($this->session->userdata('id_user') == false) {
+		// 	$this->session->set_flashdata("msg", "<div class='alert alert-danger'>Opss anda blm login</div>");
+        //     redirect('auth');
+		// }
 	}
 	public function index()
 	{
