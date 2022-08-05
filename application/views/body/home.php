@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">We offer modern solutions for growing your business</h1>
+          <h1 style="font-size: 25px;" data-aos="fade-up">PT MITRA ELANG NIAGA INDONESIA</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">The line between disorder and order lies in logistics
           </h2>
           <div data-aos="fade-up" data-aos-delay="600">
