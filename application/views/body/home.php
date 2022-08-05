@@ -27,10 +27,10 @@
               <h2>Menjadi perusahaan Freight Forwarding dengan kualitas dan mutu pelayanan yang terbaik</h2>
               <h3>Misi</h3>
               <p> Menyediakan jasa Freight Forwarding dengan mutu pelayanan yang baik. 
-Melayani tepat waktu dengan jaminan keamanan dalam pengiriman barang.
-Mengembangkan jalur distribusi yang efisien dan efektif. 
-Menyediakan layanan one stop service untuk memudahkan bisnis klien kami. 
-Memiliki sarana dan prasarana yang mendukung seperti: gudang yang luas dan sistematis pelayanan yang terpadu..</p>
+              Melayani tepat waktu dengan jaminan keamanan dalam pengiriman barang.
+              Mengembangkan jalur distribusi yang efisien dan efektif. 
+              Menyediakan layanan one stop service untuk memudahkan bisnis klien kami. 
+              Memiliki sarana dan prasarana yang mendukung seperti: gudang yang luas dan sistematis pelayanan yang terpadu..</p>
               <!-- <div class="text-center text-lg-start"> 
                 <a href="#"
                   class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
@@ -39,39 +39,80 @@ Memiliki sarana dan prasarana yang mendukung seperti: gudang yang luas dan siste
             </div>
           </div>
           <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200"> <img
-              src="<?= base_url() ?>assets/img/about.jpg" class="img-fluid" alt=""></div>
+              src="<?= base_url() ?>assets/img/visimisi.jpg" class="img-fluid" alt=""></div>
         </div>
       </div>
     </section>
+    <section id="about2" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row gx-0">
+         
+          <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200"> <img
+              src="<?= base_url() ?>assets/img/visimisi2.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="content">
+              <h3>Sekilas Tentang MIT-E</h3>
+              <!-- <h2>Menjadi perusahaan Freight Forwarding dengan kualitas dan mutu pelayanan yang terbaik</h2>
+              <h3>Misi</h3> -->
+              <p> PT Mitra Elang Niaga Indonesia (MIT-E) didirikan pada tahun 2019 di Jakarta. MIT-E merupakan perusahaan jasa pengiriman barang (Freight Forwarder), yang didukung dengan fasilitas Warehousing dan juga Regulated Agent (RA). 
+<br><br>
+MIT-E telah memiliki sistem sendiri sehingga lebih avaliable dan reliable untuk menyediakan pelayanan freight forwarding seperti penjemputan, penyimpanan, pendistribusian sampai dengan pengantaran barang langsung kepenerima. </p>
+              <!-- <div class="text-center text-lg-start"> 
+                <a href="#"
+                  class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                  <span>Read More</span> <i class="bi bi-arrow-right"></i> </a>
+                </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
     <section id="values" class="values">
       <div class="container" data-aos="fade-up">
         <header class="section-header">
-          <h2>Our Values</h2>
-          <p>Odit est perspiciatis laborum et dicta</p>
+          <!-- <h2>Our Services</h2> -->
+          <p>Our Services</p>
         </header>
         <div class="row">
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="box"> <img src="<?= base_url() ?>assets/img/values-1.png" class="img-fluid" alt="">
-              <h3>Ad cupiditate sed est odio</h3>
-              <p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p>
+            <div class="box"> <img src="<?= base_url() ?>assets/img/services1.jpg" class="img-fluid" alt="">
+              <li>
+                <ul><h3> Port to Port </h3></ul>
+                <ul><h3>Port to Door</h3></ul>
+                <ul><h3>Door to Port </h3></ul>
+                <ul><h3>Door to Door </h3></ul>
+              </li>
+              <!-- <p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p> -->
             </div>
           </div>
           <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-            <div class="box"> <img src="<?= base_url() ?>assets/img/values-2.png" class="img-fluid" alt="">
-              <h3>Voluptatem voluptatum alias</h3>
-              <p>Repudiandae amet nihil natus in distinctio suscipit id. Doloremque ducimus ea sit non.</p>
+            <div class="box"> <img src="<?= base_url() ?>assets/img/services2.jpg" class="img-fluid" alt="">
+              <h3>Trucking</h3>
+              <!-- <p>Repudiandae amet nihil natus in distinctio suscipit id. Doloremque ducimus ea sit non.</p> -->
             </div>
           </div>
           <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
-            <div class="box"> <img src="<?= base_url() ?>assets/img/values-3.png" class="img-fluid" alt="">
-              <h3>Fugit cupiditate alias nobis.</h3>
-              <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
+            <div class="box"> <img src="<?= base_url() ?>assets/img/services3.jpg" class="img-fluid" alt="">
+              <h3>SHC <br> (special handling cargo)</h3>
+              <p>
+                <ul>
+                <li>Live Animal (AVI)</li>
+                <li>Dangerous Goods (DG)</li>
+                <li>Perishable</li>
+                <li>Medical Equipment& Pharma</li>
+                <li>Heavy Cargo (HEA)</li>
+                <li>Ooversize Cargo (Dimension)</li>
+
+</ul>
+              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="counts" class="counts">
+    <!-- <section id="counts" class="counts">
       <div class="container" data-aos="fade-up">
         <div class="row gy-4">
           <div class="col-lg-3 col-md-6">
@@ -108,14 +149,14 @@ Memiliki sarana dan prasarana yang mendukung seperti: gudang yang luas dan siste
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <section id="features" class="features">
       <div class="container" data-aos="fade-up">
-        <header class="section-header">
+        <!-- <header class="section-header">
           <h2>Features</h2>
           <p>Laboriosam et omnis fuga quis dolor direda fara</p>
-        </header>
-        <div class="row">
+        </header> -->
+        <!-- <div class="row">
           <div class="col-lg-6"> <img src="<?= base_url() ?>assets/img/features.png" class="img-fluid" alt=""></div>
           <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
             <div class="row align-self-center gy-4">
@@ -209,57 +250,57 @@ Memiliki sarana dan prasarana yang mendukung seperti: gudang yang luas dan siste
             </div>
           </div>
           <div class="col-lg-6"> <img src="<?= base_url() ?>assets/img/features-2.png" class="img-fluid" alt=""></div>
-        </div>
+        </div> -->
         <div class="row feature-icons" data-aos="fade-up">
-          <h3>Ratione mollitia eos ab laudantium rerum beatae quo</h3>
+          <h3>Our Product</h3>
           <div class="row">
             <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100"> <img
-                src="<?= base_url() ?>assets/img/features-3.png" class="img-fluid p-4" alt=""></div>
+                src="<?= base_url() ?>assets/img/product.jpg" class="img-fluid p-4" alt=""></div>
             <div class="col-xl-8 d-flex content">
               <div class="row align-self-center gy-4">
                 <div class="col-md-6 icon-box" data-aos="fade-up"> <i class="ri-line-chart-line"></i>
                   <div>
-                    <h4>Corporis voluptates sit</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    <h4>Export-Import Custom clearance</h4>
+                    <!-- <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p> -->
                   </div>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100"> <i class="ri-stack-line"></i>
                   <div>
-                    <h4>Ullamco laboris nisi</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    <h4>Distribusi</h4>
+                    <!-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p> -->
                   </div>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200"> <i class="ri-brush-4-line"></i>
                   <div>
-                    <h4>Labore consequatur</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    <h4>Cold Chain</h4>
+                    <!-- <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p> -->
                   </div>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300"> <i class="ri-magic-line"></i>
                   <div>
-                    <h4>Beatae veritatis</h4>
-                    <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+                    <h4>Project Handling & Dangerous Cargo Transportation</h4>
+                    <!-- <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p> -->
                   </div>
                 </div>
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400"> <i class="ri-command-line"></i>
                   <div>
-                    <h4>Molestiae dolor</h4>
+                    <h4>Warehouse</h4>
                     <p>Et fuga et deserunt et enim. Dolorem architecto ratione tensa raptor marte</p>
                   </div>
                 </div>
-                <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500"> <i class="ri-radar-line"></i>
+                <!-- <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500"> <i class="ri-radar-line"></i>
                   <div>
                     <h4>Explicabo consectetur</h4>
                     <p>Est autem dicta beatae suscipit. Sint veritatis et sit quasi ab aut inventore</p>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section id="services" class="services">
+    <!-- <section id="services" class="services">
       <div class="container" data-aos="fade-up">
         <header class="section-header">
           <h2>Services</h2>
@@ -316,7 +357,7 @@ Memiliki sarana dan prasarana yang mendukung seperti: gudang yang luas dan siste
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- <section id="pricing" class="pricing">
       <div class="container" data-aos="fade-up">
         <header class="section-header">
@@ -742,6 +783,36 @@ Memiliki sarana dan prasarana yang mendukung seperti: gudang yang luas dan siste
     <section id="clients" class="clients">
       <div class="container" data-aos="fade-up">
         <header class="section-header">
+          <h2>Our Partner</h2>
+          <!-- <p>Temporibus omnis officia</p> -->
+        </header>
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <?php 
+
+            for ($i=1; $i <12 ; $i++) { ?>
+             <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-<?=$i?>.png" class="img-fluid" alt=""></div>
+            <!-- <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-9.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-10.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-11.png" class="img-fluid" alt=""></div> -->
+           <?php }
+            ?>
+           
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
+    <section id="clients2" class="clients">
+      <div class="container" data-aos="fade-up">
+        <header class="section-header">
           <h2>Our Clients</h2>
           <!-- <p>Temporibus omnis officia</p> -->
         </header>
@@ -749,8 +820,8 @@ Memiliki sarana dan prasarana yang mendukung seperti: gudang yang luas dan siste
           <div class="swiper-wrapper align-items-center">
             <?php 
 
-            for ($i=0; $i <11 ; $i++) { ?>
-             <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-<?=$i?>.png" class="img-fluid" alt=""></div>
+            for ($i=1; $i <12 ; $i++) { ?>
+             <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/partner<?=$i?>.png" class="img-fluid" alt=""></div>
             <!-- <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
             <div class="swiper-slide"><img src="<?= base_url() ?>assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
@@ -816,23 +887,23 @@ Memiliki sarana dan prasarana yang mendukung seperti: gudang yang luas dan siste
             <div class="row gy-4">
               <div class="col-md-6">
                 <div class="info-box"> <i class="bi bi-geo-alt"></i>
-                  <h3>Address</h3>
-                  <p>A108 Adam Street,<br>New York, NY 535022</p>
+                  <h3>Alamat</h3>
+                  <p>Warehouse Lini 1 Area Kargo Bandara Soekarno Hatta, <br> Kelurahan Pajang, Kecamatan <br> Benda Kota Tangerang
+                  <br> <b>CARGO SALES AGENT COMPANY
+</b>
+</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box"> <i class="bi bi-telephone"></i>
                   <h3>Call Us</h3>
-                  <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                  <p>Telp +62 799 0548</p>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="info-box"> <i class="bi bi-envelope"></i>
                   <h3>Email Us</h3>
-                  <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                      data-cfemail="90f9fef6ffd0f5e8f1fde0fcf5bef3fffd">[email&#160;protected]</a><br><a
-                      href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                      data-cfemail="b0d3dfdec4d1d3c4f0d5c8d1ddc0dcd59ed3dfdd">[email&#160;protected]</a></p>
+                  <p>admin@menindo.com</p>
                 </div>
               </div>
               <div class="col-md-6">

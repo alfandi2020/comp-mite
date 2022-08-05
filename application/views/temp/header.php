@@ -102,8 +102,8 @@ function range_excel($start = 'A', $end = 'ZZ'){
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">Tentang Kami</a></li>
-          <li><a class="nav-link scrollto" href="#services">Visi & Misi</a></li>
+          <li><a class="nav-link scrollto" href="#about2">Tentang Kami</a></li>
+          <li><a class="nav-link scrollto" href="#about">Visi & Misi</a></li>
           <!-- <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li> -->
           <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a href="blog.html">Blog</a></li> -->
