@@ -23,14 +23,19 @@
         <div class="row gx-0">
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content">
-              <h3>Who We Are</h3>
-              <h2>Expedita voluptas omnis cupiditate totam eveniet nobis sint iste. Dolores est repellat corrupti
-                reprehenderit.</h2>
-              <p> Quisquam vel ut sint cum eos hic dolores aperiam. Sed deserunt et. Inventore et et dolor consequatur
-                itaque ut voluptate sed et. Magnam nam ipsum tenetur suscipit voluptatum nam et est corrupti.</p>
-              <div class="text-center text-lg-start"> <a href="#"
+              <h3>Visi</h3>
+              <h2>Menjadi perusahaan Freight Forwarding dengan kualitas dan mutu pelayanan yang terbaik</h2>
+              <h3>Misi</h3>
+              <p> Menyediakan jasa Freight Forwarding dengan mutu pelayanan yang baik. 
+Melayani tepat waktu dengan jaminan keamanan dalam pengiriman barang.
+Mengembangkan jalur distribusi yang efisien dan efektif. 
+Menyediakan layanan one stop service untuk memudahkan bisnis klien kami. 
+Memiliki sarana dan prasarana yang mendukung seperti: gudang yang luas dan sistematis pelayanan yang terpadu..</p>
+              <!-- <div class="text-center text-lg-start"> 
+                <a href="#"
                   class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
-                  <span>Read More</span> <i class="bi bi-arrow-right"></i> </a></div>
+                  <span>Read More</span> <i class="bi bi-arrow-right"></i> </a>
+                </div> -->
             </div>
           </div>
           <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200"> <img
