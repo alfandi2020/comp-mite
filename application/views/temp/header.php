@@ -125,7 +125,7 @@ function range_excel($start = 'A', $end = 'ZZ'){
             </ul>
           </li> -->
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="http://103.108.126.136/mit-e">Login</a></li>
+          <li><a class="getstarted scrollto" href="https://login.menindo.com">Login</a></li>
         </ul> <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
     </div>
