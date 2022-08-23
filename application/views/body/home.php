@@ -285,7 +285,7 @@ MIT-E telah memiliki sistem sendiri sehingga lebih avaliable dan reliable untuk 
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400"> <i class="ri-command-line"></i>
                   <div>
                     <h4>Warehouse</h4>
-                    <p>Et fuga et deserunt et enim. Dolorem architecto ratione tensa raptor marte</p>
+                    <!-- <p>Et fuga et deserunt et enim. Dolorem architecto ratione tensa raptor marte</p> -->
                   </div>
                 </div>
                 <!-- <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500"> <i class="ri-radar-line"></i>
