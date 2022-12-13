@@ -77,7 +77,7 @@ function range_excel($start = 'A', $end = 'ZZ'){
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Mit E</title>
+  <title>MIT-E</title>
   <meta name="robots" content="noindex, nofollow">
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -93,6 +93,9 @@ function range_excel($start = 'A', $end = 'ZZ'){
   <link href="<?= base_url() ?>assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/css/bootstrap-select.min.css">
 </head>
 
 <body>
