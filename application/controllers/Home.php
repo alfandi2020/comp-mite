@@ -29,6 +29,22 @@ class Home extends CI_Controller {
 		$destination = $this->input->post('inputDest');
 		$weight = $this->input->post('inputWeight');
 
-		var_dump($product, $origin, $destination, $weight);exit;
+		// var_dump($product, $origin, $destination, $weight);exit;
+		$array = array('origin' => $origin, 'destinasi' => $destination);
+		$this->db->where('origin',$origin);
+		$this->db->where('destinasi',$destination);
+
+		$data = [
+			"pricelist" => $this->db->get('mite_pricelist')->result(),
+			"weight" => $weight,
+		];
+
+		// echo '<pre>';
+		// print_r($data);
+		// '</pre>';
+		// exit;
+		$this->load->view('temp/header',$data);
+		$this->load->view('body/proforma');
+		$this->load->view('temp/footer');
 	}
 }

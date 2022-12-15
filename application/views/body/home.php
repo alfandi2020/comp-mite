@@ -14,6 +14,7 @@
         </div>
         <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200"> 
           <!-- <img src="<?= base_url() ?>assets/img/h1.png" class="img-fluid" alt=""> -->
+          <h3>Simulasi Harga</h3>
           <form action="<?= base_url('home/proforma')?>" method="post" class="form">
             <div class="row">
               <div class="col-md-6">
@@ -74,7 +75,7 @@
       </div>
     </div>
   </section>
-  <main id="main">
+  
     <section id="about" class="about">
       <div class="container" data-aos="fade-up">
         <div class="row gx-0">
@@ -113,8 +114,8 @@
               <!-- <h2>Menjadi perusahaan Freight Forwarding dengan kualitas dan mutu pelayanan yang terbaik</h2>
               <h3>Misi</h3> -->
               <p> PT Mitra Elang Niaga Indonesia (MIT-E) didirikan pada tahun 2019 di Jakarta. MIT-E merupakan perusahaan jasa pengiriman barang (Freight Forwarder), yang didukung dengan fasilitas Warehousing dan juga Regulated Agent (RA). 
-<br><br>
-MIT-E telah memiliki sistem sendiri sehingga lebih avaliable dan reliable untuk menyediakan pelayanan freight forwarding seperti penjemputan, penyimpanan, pendistribusian sampai dengan pengantaran barang langsung kepenerima. </p>
+              <br><br>
+              MIT-E telah memiliki sistem sendiri sehingga lebih avaliable dan reliable untuk menyediakan pelayanan freight forwarding seperti penjemputan, penyimpanan, pendistribusian sampai dengan pengantaran barang langsung kepenerima. </p>
               <!-- <div class="text-center text-lg-start"> 
                 <a href="#"
                   class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
@@ -155,14 +156,13 @@ MIT-E telah memiliki sistem sendiri sehingga lebih avaliable dan reliable untuk 
               <h3>SHC <br> (special handling cargo)</h3>
               <p>
                 <ul>
-                <li>Live Animal (AVI)</li>
-                <li>Dangerous Goods (DG)</li>
-                <li>Perishable</li>
-                <li>Medical Equipment& Pharma</li>
-                <li>Heavy Cargo (HEA)</li>
-                <li>Ooversize Cargo (Dimension)</li>
-
-</ul>
+                  <li>Live Animal (AVI)</li>
+                  <li>Dangerous Goods (DG)</li>
+                  <li>Perishable</li>
+                  <li>Medical Equipment& Pharma</li>
+                  <li>Heavy Cargo (HEA)</li>
+                  <li>Ooversize Cargo (Dimension)</li>
+                </ul>
               </p>
             </div>
           </div>
