@@ -34,13 +34,15 @@
                 <select name="inputOrigin" class="form-control selectpicker" data-live-search="true">
                 <!-- <select id="inputState" class="form-control se"> -->
                   <option>Choose...</option>
-                  <?php 
+                  <option value="CGK">JAKARTA (CENGKARENG)</option>
+                  <option value="HLP">JAKARTA (HALIM PERDANAKUSUMA)</option>
+                  <!-- <?php 
                   foreach($destination as $d) {
                     ?>
                     <option value="<?= $d->kode_destinasi ?>"><?= $d->destinasi?></option>
                     <?php
                   }
-                  ?>
+                  ?> -->
                 </select>
               </div>
               <div class="col">
