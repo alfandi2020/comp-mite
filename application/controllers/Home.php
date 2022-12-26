@@ -29,7 +29,6 @@ class Home extends CI_Controller {
 		$destination = $this->input->post('inputDest');
 		$weight = $this->input->post('inputWeight');
 
-		// var_dump($product, $origin, $destination, $weight);exit;
 		$array = array('origin' => $origin, 'destinasi' => $destination);
 		$this->db->where('origin',$origin);
 		$this->db->where('destinasi',$destination);
