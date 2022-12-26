@@ -64,7 +64,7 @@
                                     Detail 
                                  </button>
                               <?php } ?>
-                              <a class="btn btn-primary btn-sm" href="https://login.menindo.com">Book now! <?= $_COOKIE['user'] ?></a>
+                              <a class="btn btn-primary btn-sm" href="https://login.menindo.com">Book now!</a>
                            </td>
                         </tr>
                         <tr>
