@@ -28,10 +28,12 @@
                <thead>
                   <tr>
                      <th>Num.</th>
-                     <th>Airline</th>
+                     <!-- <th>Airline</th> -->
                      <th>Origin</th>
                      <th>Destination</th>
                      <th>Price/kgs</th>
+                     <th>Weight</th>
+                     <th>Total</th>
                      <th>Detail</th>
                   </tr>
                </thead>
@@ -50,14 +52,18 @@
                         ?>
                         <tr data-toggle="collapse" data-target="#demo<?= $p->id ?>" class="accordion-toggle">
                            <td><?= $no ?>.</td>
-                           <td><?= $maskapai?></td>
+                           <!-- <td><?= $maskapai?></td> -->
                            <td><?= $p->origin ?></td>
                            <td><?= $p->destinasi ?></td>
                            <td align=right>Rp <?= number_format($p->all_in,2) ?></td>
+                           <td align=right><?= $this->input->post('inputWeight') ?></td>
+                           <td align=right>Rp <?= number_format($p->all_in*$this->input->post('inputWeight'),2) ?></td>
                            <td align=center>
-                              <button class="btn btn-primary btn-sm">
-                                 Detail
-                              </button>
+                              <?php if ($this->session->userdata('id_user') == true) { ?>
+                                 <button class="btn btn-primary btn-sm">
+                                    Detail 
+                                 </button>
+                              <?php } ?>
                               <a class="btn btn-primary btn-sm" href="https://login.menindo.com">Book now!</a>
                            </td>
                         </tr>
