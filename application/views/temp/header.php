@@ -104,7 +104,11 @@ function range_excel($start = 'A', $end = 'ZZ'){
         class="logo d-flex align-items-center"> <img src="<?= base_url() ?>assets/img/mite.png" alt=""> </a>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <?php
+            $uri = $this->uri->segment(2) == 'proforma' ? 'index' : '';
+
+          ?>
+          <li><a class="nav-link scrollto active" href="<?= $uri ?>#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about2">Tentang Kami</a></li>
           <li><a class="nav-link scrollto" href="#about">Visi & Misi</a></li>
           <!-- <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li> -->
@@ -128,7 +132,7 @@ function range_excel($start = 'A', $end = 'ZZ'){
             </ul>
           </li> -->
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="https://login.menindo.com">Login</a></li>
+          <li><a class="getstarted scrollto" href="https://menindo.com/login">Login</a></li>
         </ul> <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
     </div>
