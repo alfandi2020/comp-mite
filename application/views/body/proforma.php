@@ -64,7 +64,7 @@
                                     Detail 
                                  </button>
                               <?php } ?>
-                              <a class="btn btn-primary btn-sm" href="https://menindo.com/dash/booking/<?= $p->id?>">Book now!</a>
+                              <a class="btn btn-primary btn-sm" href="https://menindo.com/dash/booking/b/<?= $p->id?>">Book now!</a>
                            </td>
                         </tr>
                         <tr>
