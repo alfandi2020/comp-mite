@@ -50,21 +50,22 @@
                            $maskapai = "Garuda Indonesia";
                         }
                         ?>
-                        <tr data-toggle="collapse" data-target="#demo<?= $p->id ?>" class="accordion-toggle">
+                        <tr>
                            <td><?= $no ?>.</td>
                            <!-- <td><?= $maskapai?></td> -->
                            <td><?= $p->origin ?></td>
                            <td><?= $p->destinasi ?></td>
                            <td align=right>Rp <?= number_format($p->all_in,2) ?></td>
-                           <td align=right><?= $this->input->post('inputWeight') ?></td>
-                           <td align=right>Rp <?= number_format($p->all_in*$this->input->post('inputWeight'),2) ?></td>
+                           <td align=right><?= $this->input->get('inputWeight') ?></td>
+                           <td align=right>Rp <?= number_format($p->all_in*$this->input->get('inputWeight'),2) ?></td>
                            <td align=center>
                               <?php if ($this->session->userdata('id_user') == true) { ?>
-                                 <button class="btn btn-primary btn-sm">
+                                 <button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#demo<?= $p->id ?>" class="accordion-toggle">
                                     Detail 
                                  </button>
                               <?php } ?>
-                              <a class="btn btn-primary btn-sm" href="https://menindo.com/dash/booking/b/<?= $p->id?>">Book now!</a>
+                              <b id="<?= $p->id ?>" class="btn btn-primary btn-sm booking">Book now!</b>
+                              <!-- href="https://menindo.com/dash/booking/b/<?= $p->id?>" -->
                            </td>
                         </tr>
                         <tr>
@@ -83,7 +84,7 @@
                                        <?php 
                                        $this->db->where('id', $p->id);
                                        $a = $this->db->get('mite_pricelist')->row_array();
-
+                                       $weight = $this->input->get('inputWeight');
                                        $s_smu_basic = $a['smu_basic'] * $weight;
                                        $s_ppn_smu = $s_smu_basic * 0.11;
 

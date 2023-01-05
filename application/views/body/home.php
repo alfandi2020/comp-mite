@@ -15,7 +15,7 @@
         <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200"> 
           <!-- <img src="<?= base_url() ?>assets/img/h1.png" class="img-fluid" alt=""> -->
           <h3>Simulasi Harga</h3>
-          <form action="<?= base_url('home/proforma')?>" method="post" class="form">
+          <form action="<?= base_url('home/proforma')?>" method="get" class="form">
             <div class="row">
               <div class="col-md-6">
                 <label for="inputProduct">Product Type</label>

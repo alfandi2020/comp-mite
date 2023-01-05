@@ -72,9 +72,118 @@
   <script src="<?= base_url() ?>assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="<?= base_url() ?>assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="<?= base_url() ?>assets/vendor/php-email-form/validate.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="<?= base_url() ?>assets/js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
   <script async src='https://www.googletagmanager.com/gtag/js?id=G-P7JSYB1CSP'></script>
   <script>
+    $(document).ready(function() {
+      $(".booking").on('click', function (eventx) {
+        eventx.preventDefault();
+	      var id_book = this.id;
+        <?php if ($this->session->userdata('id_user') == true) { ?>
+          Swal.fire({
+            title: 'Yakin ingin booking ?',
+            // text : id_book,
+            showCancelButton: true,
+            confirmButtonText: 'Yes',
+          }).then((result) => {
+            if (result.isConfirmed) {
+              $.ajax({
+                url: "booking",
+                type: "POST",
+                data: {id_booking: id_book},
+                dataType: "json",
+                success: function (data) {
+                  if (data.status == 200) {
+                    Swal.fire({
+                      icon: 'success',
+                      title: 'Berhasil...',
+                      text: data.msg,
+                    }).then((result2) => {
+                      if (result2.isConfirmed == true) {
+                        window.location.replace('<?php
+                          $params = 'inputProduct='.$_GET['inputProduct'].'&inputOrigin='.$_GET['inputOrigin'].'&inputDest='.$_GET['inputDest'].'&inputWeight='.$_GET['inputWeight'].'';
+                          base_url('home/proforma?'.$params.'') ?>');
+                      }
+                      window.location.replace('<?= base_url('home/proforma?'.$params.'') ?>');
+                    })
+                  }
+                },
+                error: function(err){
+                  Swal.fire('error')
+                }
+
+              });
+            } 
+          })
+        <?php }else{ ?>
+          (async () => {
+            const { value: formValues } = await Swal.fire({
+              title: 'Login',
+              text: 'silahkan login terlebih dahulu',
+              html:
+                '<input id="username" placeholder="Username" class="swal2-input">' +
+                '<input id="password" placeholder="Password" class="swal2-input">',
+              focusConfirm: false,
+              showCancelButton: true,
+              confirmButtonText: 'Login',
+              preConfirm: () => {
+
+                return [
+                  document.getElementById('username').value,
+                  document.getElementById('password').value
+                ]
+              }
+            })
+            if (formValues) {
+
+              $.ajax({
+                url: "login",
+                type: "POST",
+                data: {username: formValues[0],password:formValues[1]},
+                dataType: "json",
+                success: function (data) {
+                  if (data.status == 200) {
+                    Swal.fire({
+                      icon: 'success',
+                      title: 'Berhasil...',
+                      text: data.msg,
+                    }).then((result2) => {
+                      if (result2.isConfirmed == true) {
+                        window.location.replace('<?php
+                          $params = 'inputProduct='.$_GET['inputProduct'].'&inputOrigin='.$_GET['inputOrigin'].'&inputDest='.$_GET['inputDest'].'&inputWeight='.$_GET['inputWeight'].'';
+                          base_url('home/proforma?'.$params.'') ?>');
+                      }
+                      window.location.replace('<?= base_url('home/proforma?'.$params.'') ?>');
+                    })
+                  }else if(data.status == 400){
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Opss...',
+                      text: data.msg,
+                    })
+                  }else if (data.status == 305) {
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Opss...',
+                      text: data.msg,
+                    })
+                  }
+                },
+                error: function(err){
+                  Swal.fire('error')
+                }
+
+              });
+              // Swal.fire(formValues[1])
+            }
+          })()
+        <?php } ?>
+      })
+    });
+
     if (window.self == window.top) {
       window.dataLayer = window.dataLayer || [];
 
@@ -95,7 +204,6 @@
         return true;
     }
     </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.2/js/bootstrap-select.min.js"></script>
 </body>
