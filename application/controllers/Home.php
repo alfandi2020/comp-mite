@@ -32,6 +32,7 @@ class Home extends CI_Controller {
 						$datax = [
 							'id_user' => $data['id'],
 							'username' => $data['username'],
+							'nama' => $data['nama'],
 							'role' => $data['role']
 						];
 						$this->session->set_userdata($datax);
@@ -83,6 +84,11 @@ class Home extends CI_Controller {
 		$this->load->view('temp/header',$data);
 		$this->load->view('body/proforma');
 		$this->load->view('temp/footer');
+	}
+	function logout(){
+		$array_items = array('id_user', 'username','nama	');
+		$this->session->unset_userdata($array_items);
+		redirect('home');
 	}
 	public function booking()
     {

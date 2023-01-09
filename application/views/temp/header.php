@@ -132,7 +132,18 @@ function range_excel($start = 'A', $end = 'ZZ'){
             </ul>
           </li> -->
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <?php 
+            if ($this->session->userdata('id_user') == true) {?>
+            <li class="dropdown"><a class="getstarted scrollto" href="#"><span><?= $this->session->userdata('nama') ?></span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="https://menindo.com/dash/dashboard">Dashboard</a></li>
+                <li><a href="<?= base_url('home/logout') ?>">Logout</a></li>
+              </ul>
+            </li>
+           <?php }else{
+          ?>
           <li><a class="getstarted scrollto" href="https://menindo.com/dash">Login</a></li>
+          <?php } ?>
         </ul> <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
     </div>
