@@ -64,7 +64,7 @@
                                     Detail 
                                  </button>
                               <?php } ?>
-                              <b id="<?= $p->id ?>" class="btn btn-primary btn-sm booking">Book now!</b>
+                              <b id="<?= $p->id.",".$this->input->get('inputWeight') ?>" class="btn btn-primary btn-sm booking">Book now!</b>
                               <!-- href="https://menindo.com/dash/booking/b/<?= $p->id?>" -->
                            </td>
                         </tr>

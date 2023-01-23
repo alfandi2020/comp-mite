@@ -94,11 +94,16 @@ class Home extends CI_Controller {
     {
         if ($this->session->userdata('id_user') == true) {
             $id = $this->input->post('id_booking');
+			$id_ex = explode(',',$id);
+			$id_price = $id_ex[0];
+			$weight = $id_ex[1];
             $list = $this->db->get_where('mite_pricelist',['id' => $id])->row_array();
             $data = [
-                "role" => 1,
-                "id_pricelist" => $id,
+                "role" => 1,//role 1 untuk approve or reject admin
+				"id_user" => $this->session->userdata('id_user'),
+                "id_pricelist" => $id_price,
                 "all_in" => $list['all_in'],
+				"weight" => $weight,
 				"status" => "Waiting"
             ];
             $this->db->insert('booking',$data);
