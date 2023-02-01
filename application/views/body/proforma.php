@@ -68,19 +68,19 @@
                               }else{
                                  $tambah_charge = 0;
                               }
-                          echo number_format($p->all_in + $tambah_charge,2) ?></td>
+                          echo number_format(intval($p->all_in) + intval($tambah_charge),2) ?></td>
                            <td align=right><?= $this->input->get('inputWeight') ?></td>
                            <td align=right><?= $this->input->get('inputKoli') ?></td>
                            <td align=right>Rp <?php 
-                        $xx = $p->all_in + $tambah_charge;
-                          echo number_format($xx*$this->input->get('inputWeight'),2) ?></td>
+                           $xx = $p->all_in;
+                          echo number_format($xx*$this->input->get('inputWeight') + $tambah_charge,2) ?></td>
                            <td align=center>
                               <?php if ($this->session->userdata('id_user') == true) { ?>
                                  <button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#demo<?= $p->id ?>" class="accordion-toggle">
                                     Rincian 
                                  </button>
                               <?php } ?>
-                              <b id="<?= $p->id.",".$this->input->get('inputWeight').",". $this->input->get('inputKoli') ?>" class="btn btn-primary btn-sm booking">Pesan Sekarang!</b>
+                              <b id="<?= $p->id.",".$this->input->get('inputWeight').",". $this->input->get('inputKoli') . "," . $this->input->get('inputProduct') ?>" class="btn btn-primary btn-sm booking">Pesan Sekarang!</b>
                               <!-- href="https://menindo.com/dash/booking/b/<?= $p->id?>" -->
                            </td>
                         </tr>

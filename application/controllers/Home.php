@@ -98,9 +98,18 @@ class Home extends CI_Controller {
 			$id_price = $id_ex[0];
 			$weight = $id_ex[1];
 			$koli  = $id_ex[2];
-            $list = $this->db->get_where('mite_pricelist',['id' => $id])->row_array();
+			$product_x  = $id_ex[3];
+            $list = $this->db->get_where('mite_pricelist',['id' => $id_price])->row_array();
 			$get_user = $this->db->get_where('dt_agent',['id_user' => $this->session->userdata('id_user')])->row_array();
-			if ($get_user['saldo'] < $list['all_in'] * $weight && $get_user['saldo'] < 1000000) { //kondisi jika saldo kurang dan saldo limit 1jt
+			if($product_x == 'Door to Port'){
+				$tambah_charge = 3000;
+			 }else{
+				$tambah_charge = 0;
+			 }
+			$price_x = $list['all_in'] * $weight + $tambah_charge;
+			$total = intval($get_user['saldo']) - $price_x;
+			$fee_mite = $price_x * 22 / 100;
+			if ($total < $price_x || $get_user['saldo'] < 1000000) { //kondisi jika saldo kurang dan saldo limit 1jt
 				$msg = [
 					'msg' => 'Saldo kurang,silahkan melakukan topup dan minimal limit saldo Rp.1.000.000',
 					'status' => 303
@@ -113,9 +122,17 @@ class Home extends CI_Controller {
 					"all_in" => $list['all_in'],
 					"weight" => $weight,
 					"koli" => $koli,
-					"status" => "Waiting"
+					"status" => "Waiting",
+					"fee_mite" => $fee_mite
 				];
 				$this->db->insert('booking',$data);
+
+				//update saldo agent
+				$da_agent = [
+					"saldo" => $total
+				];
+				$this->db->where('id_user',$this->session->userdata('id_user'));
+				$this->db->update('dt_agent',$da_agent);
 				$msg = [
 					'msg' => 'Berhasil dibooking',
 					'status' => 200
