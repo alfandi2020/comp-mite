@@ -113,7 +113,7 @@
                   }else if(data.status == 303){
                       Swal.fire({
                         icon: 'info',
-                        title: 'Error...',
+                        title: 'Opsss...',
                         text: data.msg,
                       }).then((result2) => {
                         if (result2.isConfirmed == true) {
