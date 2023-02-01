@@ -34,7 +34,7 @@
             <div class="row">
               <div class="col-md-6">
                 <label for="inputProduct">Jenis Produk</label>
-                <select name="inputProduct" id="" class="form-control selectpicker" data-live-search="true">
+                <select name="inputProduct" id="" required class="form-control selectpicker" data-live-search="true">
                   <option>Pilih...</option>
                   <option value="Port to Port">Bandara Ke Bandara</option>
                   <option value="Port to Door">Bandara Ke Tujuan</option>
@@ -46,7 +46,7 @@
             <div class="row">
               <div class="col">
                 <label for="inputState">Berangkat</label>
-                <select name="inputOrigin" class="form-control selectpicker" data-live-search="true">
+                <select name="inputOrigin" required class="form-control selectpicker" data-live-search="true">
                 <!-- <select id="inputState" class="form-control se"> -->
                   <option>Pilih...</option>
                   <option value="CGK">JAKARTA (CENGKARENG)</option>
@@ -62,7 +62,7 @@
               </div>
               <div class="col">
                 <label for="inputState">Tujuan</label>
-                <select name="inputDest" class="form-control selectpicker" data-live-search="true">
+                <select name="inputDest" required class="form-control selectpicker" data-live-search="true">
                 <!-- <select id="inputState" class="form-control se"> -->
                   <option>Pilih...</option>
                   <?php 
@@ -78,11 +78,11 @@
             <div class="row">
               <div class="col-md-6">
                 <label for="inputWeight">Berat</label>
-                <input type="text" class="form-control" onkeypress="return onlyNumberKey(event)" name="inputWeight">
+                <input type="text" required class="form-control" onkeypress="return onlyNumberKey(event)" name="inputWeight">
               </div>
               <div class="col-md-6">
                 <label for="inputWeight">Koli</label>
-                <input type="text" class="form-control" onkeypress="return onlyNumberKey(event)" name="inputKoli">
+                <input type="text" required class="form-control" onkeypress="return onlyNumberKey(event)" name="inputKoli">
               </div>
             </div>
             <br>
