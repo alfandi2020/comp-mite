@@ -119,6 +119,7 @@ class Home extends CI_Controller {
 					"role" => 1,//role 1 untuk approve or reject admin
 					"id_user" => $this->session->userdata('id_user'),
 					"id_pricelist" => $id_price,
+					"product" => $product_x,
 					"all_in" => $list['all_in'],
 					"weight" => $weight,
 					"koli" => $koli,
