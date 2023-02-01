@@ -100,8 +100,11 @@ function range_excel($start = 'A', $end = 'ZZ'){
 
 <body>
   <header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between"> <a href="<?= base_url() ?>"
-        class="logo d-flex align-items-center"> <img src="<?= base_url() ?>assets/img/mite.png" alt=""> </a>
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between"> 
+      <!-- <a href="<?= base_url() ?>"
+        class="logo d-flex align-items-center"> <img src="<?= base_url() ?>assets/img/mite.png" alt=""> </a> -->
+      <a href="<?= base_url() ?>"
+        class="logo d-flex align-items-center"> <img src="<?= base_url() ?>assets/img/logo-inkoppas.png" alt=""> </a>
       <nav id="navbar" class="navbar">
         <ul>
           <?php
@@ -109,8 +112,8 @@ function range_excel($start = 'A', $end = 'ZZ'){
 
           ?>
           <li><a class="nav-link scrollto active" href="<?= $uri ?>#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about2">Tentang Kami</a></li>
-          <li><a class="nav-link scrollto" href="#about">Visi & Misi</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#about2">Tentang Kami</a></li> -->
+          <!-- <li><a class="nav-link scrollto" href="#about">Visi & Misi</a></li> -->
           <!-- <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li> -->
           <!-- <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a href="blog.html">Blog</a></li> -->
@@ -131,7 +134,7 @@ function range_excel($start = 'A', $end = 'ZZ'){
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li> -->
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <!-- <li><a class="nav-link scrollto" href="#contact">Contact</a></li> -->
           <?php 
             if ($this->session->userdata('id_user') == true) {?>
             <li class="dropdown"><a class="getstarted scrollto" href="#"><span><?= $this->session->userdata('nama') ?></span> <i class="bi bi-chevron-down"></i></a>

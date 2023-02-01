@@ -3,9 +3,10 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 style="font-size: 25px;" data-aos="fade-up">PT MITRA ELANG NIAGA INDONESIA</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">The line between disorder and order lies in logistics
-          </h2>
+          <!-- <h1 style="font-size: 25px;" data-aos="fade-up">PT MITRA ELANG NIAGA INDONESIA</h1> -->
+          <!-- <h1 style="font-size: 25px;" data-aos="fade-up">INKOPPAS</h1> -->
+          <!-- <h2 data-aos="fade-up" data-aos-delay="400">The line between disorder and order lies in logistics
+          </h2> -->
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start"> <a href="#about"
                 class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
@@ -13,27 +14,41 @@
           </div>
         </div>
         <div class="col-lg-6" data-aos="zoom-out" data-aos-delay="200"> 
+          <?php
+          // echo $this->session->flashdata('msg');
+            if ($this->session->flashdata('msg') == 'ukuran') { ?>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script>
+                    $(document).ready(function(){
+                      Swal.fire({
+                        icon: 'info',
+                        title: 'Oops...',
+                        text: 'Berat minimal 45kg'
+                      })
+                    })
+                </script>
+            <?php } ?>
           <!-- <img src="<?= base_url() ?>assets/img/h1.png" class="img-fluid" alt=""> -->
           <h3>Simulasi Harga</h3>
           <form action="<?= base_url('home/proforma')?>" method="get" class="form">
             <div class="row">
               <div class="col-md-6">
-                <label for="inputProduct">Product Type</label>
+                <label for="inputProduct">Jenis Produk</label>
                 <select name="inputProduct" id="" class="form-control selectpicker" data-live-search="true">
-                  <option>Choose...</option>
-                  <option value="Port to Port">Port to Port</option>
-                  <option value="Port to Door">Port to Door</option>
-                  <option value="Door to Port">Door to Port</option>
-                  <option value="Door to Door">Door to Door</option>
+                  <option>Pilih...</option>
+                  <option value="Port to Port">Bandara Ke Bandara</option>
+                  <option value="Port to Door">Bandara Ke Tujuan</option>
+                  <option value="Door to Port">Titik Asal Ke Bandara</option>
+                  <option value="Door to Door">Titik Asal Ke Tujuan</option>
                 </select>
               </div>
-            </div>
+            </div> <br>
             <div class="row">
               <div class="col">
-                <label for="inputState">Origin</label>
+                <label for="inputState">Berangkat</label>
                 <select name="inputOrigin" class="form-control selectpicker" data-live-search="true">
                 <!-- <select id="inputState" class="form-control se"> -->
-                  <option>Choose...</option>
+                  <option>Pilih...</option>
                   <option value="CGK">JAKARTA (CENGKARENG)</option>
                   <option value="HLP">JAKARTA (HALIM PERDANAKUSUMA)</option>
                   <!-- <?php 
@@ -46,10 +61,10 @@
                 </select>
               </div>
               <div class="col">
-                <label for="inputState">Destination</label>
+                <label for="inputState">Tujuan</label>
                 <select name="inputDest" class="form-control selectpicker" data-live-search="true">
                 <!-- <select id="inputState" class="form-control se"> -->
-                  <option>Choose...</option>
+                  <option>Pilih...</option>
                   <?php 
                   foreach($destination as $d) {
                     ?>
@@ -59,17 +74,21 @@
                   ?>
                 </select>
               </div>
-            </div>
+            </div><br>
             <div class="row">
               <div class="col-md-6">
-                <label for="inputWeight">Weight</label>
+                <label for="inputWeight">Berat</label>
                 <input type="text" class="form-control" onkeypress="return onlyNumberKey(event)" name="inputWeight">
+              </div>
+              <div class="col-md-6">
+                <label for="inputWeight">Koli</label>
+                <input type="text" class="form-control" onkeypress="return onlyNumberKey(event)" name="inputKoli">
               </div>
             </div>
             <br>
             <div class="row">
               <div class="col-md-12 pull-right" align="right">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Hitung</button>
               </div>
             </div>
           </form>

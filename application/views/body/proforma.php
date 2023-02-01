@@ -27,14 +27,15 @@
             <table class="table table-bordered">
                <thead>
                   <tr>
-                     <th>Num.</th>
+                     <th>No.</th>
                      <!-- <th>Airline</th> -->
-                     <th>Origin</th>
-                     <th>Destination</th>
-                     <th>Price/kgs</th>
-                     <th>Weight</th>
+                     <th>Berangkat</th>
+                     <th>Tujuan</th>
+                     <th>Harga</th>
+                     <th>Berat</th>
+                     <th>Koli</th>
                      <th>Total</th>
-                     <th>Detail</th>
+                     <th>Rincian</th>
                   </tr>
                </thead>
                <tbody>
@@ -53,18 +54,33 @@
                         <tr>
                            <td><?= $no ?>.</td>
                            <!-- <td><?= $maskapai?></td> -->
-                           <td><?= $p->origin ?></td>
-                           <td><?= $p->destinasi ?></td>
-                           <td align=right>Rp <?= number_format($p->all_in,2) ?></td>
+                           <td><?php
+                           $get_des = $this->db->get_where('mite_destinasi',['kode_destinasi' => $p->origin])->row_array();
+                           $get_des2 = $this->db->get_where('mite_destinasi',['kode_destinasi' => $p->destinasi])->row_array();
+                           echo $get_des['kode_destinasi'] . ' ('.$get_des['destinasi'].')';
+                           ?></td>
+                           <td><?php
+                           echo $get_des2['kode_destinasi'] . ' ('.$get_des2['destinasi'].')';
+                            ?></td>
+                           <td align=right>Rp <?php 
+                              if($this->input->get('inputProduct') == 'Door to Port'){
+                                 $tambah_charge = 3000;
+                              }else{
+                                 $tambah_charge = 0;
+                              }
+                          echo number_format($p->all_in + $tambah_charge,2) ?></td>
                            <td align=right><?= $this->input->get('inputWeight') ?></td>
-                           <td align=right>Rp <?= number_format($p->all_in*$this->input->get('inputWeight'),2) ?></td>
+                           <td align=right><?= $this->input->get('inputKoli') ?></td>
+                           <td align=right>Rp <?php 
+                        $xx = $p->all_in + $tambah_charge;
+                          echo number_format($xx*$this->input->get('inputWeight'),2) ?></td>
                            <td align=center>
                               <?php if ($this->session->userdata('id_user') == true) { ?>
                                  <button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#demo<?= $p->id ?>" class="accordion-toggle">
-                                    Detail 
+                                    Rincian 
                                  </button>
                               <?php } ?>
-                              <b id="<?= $p->id.",".$this->input->get('inputWeight') ?>" class="btn btn-primary btn-sm booking">Book now!</b>
+                              <b id="<?= $p->id.",".$this->input->get('inputWeight').",". $this->input->get('inputKoli') ?>" class="btn btn-primary btn-sm booking">Pesan Sekarang!</b>
                               <!-- href="https://menindo.com/dash/booking/b/<?= $p->id?>" -->
                            </td>
                         </tr>
@@ -74,9 +90,9 @@
                                  <table class="table table-bordered">
                                     <thead>
                                        <tr>
-                                          <th>Description</th>
-                                          <th>Weight</th>
-                                          <th>Price per unit</th>
+                                          <th>Deskripsi</th>
+                                          <th>Berat</th>
+                                          <th>Harga per unit</th>
                                           <th>Subtotal</th>
                                        </tr>
                                     </thead>

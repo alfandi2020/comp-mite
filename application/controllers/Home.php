@@ -67,23 +67,23 @@ class Home extends CI_Controller {
 		$origin = $this->input->get('inputOrigin');
 		$destination = $this->input->get('inputDest');
 		// $weight = $this->input->get('inputWeight');
+		$weight = $this->input->get('inputWeight');
+		if ($weight > 45) {
+			$array = array('origin' => $origin, 'destinasi' => $destination);
+			$this->db->where('origin',$origin);
+			$this->db->where('destinasi',$destination);
 
-		$array = array('origin' => $origin, 'destinasi' => $destination);
-		$this->db->where('origin',$origin);
-		$this->db->where('destinasi',$destination);
-
-		$data = [
-			"pricelist" => $this->db->get('mite_pricelist')->result(),
-			// "weight" => $weight,
-		];
-
-		// echo '<pre>';
-		// print_r($data);
-		// '</pre>';
-		// exit;
-		$this->load->view('temp/header',$data);
-		$this->load->view('body/proforma');
-		$this->load->view('temp/footer');
+			$data = [
+				"pricelist" => $this->db->get('mite_pricelist')->result(),
+				// "weight" => $weight,
+			];
+			$this->load->view('temp/header',$data);
+			$this->load->view('body/proforma');
+			$this->load->view('temp/footer');
+		}else{
+			$this->session->set_flashdata('msg','ukuran');
+			redirect();
+		}
 	}
 	function logout(){
 		$array_items = array('id_user', 'username','nama	');
@@ -97,21 +97,32 @@ class Home extends CI_Controller {
 			$id_ex = explode(',',$id);
 			$id_price = $id_ex[0];
 			$weight = $id_ex[1];
+			$koli  = $id_ex[2];
             $list = $this->db->get_where('mite_pricelist',['id' => $id])->row_array();
-            $data = [
-                "role" => 1,//role 1 untuk approve or reject admin
-				"id_user" => $this->session->userdata('id_user'),
-                "id_pricelist" => $id_price,
-                "all_in" => $list['all_in'],
-				"weight" => $weight,
-				"status" => "Waiting"
-            ];
-            $this->db->insert('booking',$data);
-			$msg = [
-				'msg' => 'Berhasil dibooking',
-				'status' => 200
-			];
+			$get_user = $this->db->get_where('dt_agent',['id_user' => $this->session->userdata('id_user')])->row_array();
+			if ($get_user['saldo'] < $list['all_in'] * $weight && $get_user['saldo'] < 1000000) { //kondisi jika saldo kurang dan saldo limit 1jt
+				$msg = [
+					'msg' => 'Saldo kurang,silahkan melakukan topup dan minimal limit saldo Rp.1.000.000',
+					'status' => 303
+				];
+			}else{
+				$data = [
+					"role" => 1,//role 1 untuk approve or reject admin
+					"id_user" => $this->session->userdata('id_user'),
+					"id_pricelist" => $id_price,
+					"all_in" => $list['all_in'],
+					"weight" => $weight,
+					"koli" => $koli,
+					"status" => "Waiting"
+				];
+				$this->db->insert('booking',$data);
+				$msg = [
+					'msg' => 'Berhasil dibooking',
+					'status' => 200
+				];
+			}
 			echo json_encode($msg);
+
             // echo '<script>location.replace("https://www.menindo.com")</script>';
         }else{
             $this->session->set_flashdata('msg','<div>Silahkan login terlebih dahulu untuk melakukan booking</div>');

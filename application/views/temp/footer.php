@@ -103,12 +103,24 @@
                       text: data.msg,
                     }).then((result2) => {
                       if (result2.isConfirmed == true) {
-                        window.location.replace('<?php
-                          $params = 'inputProduct='.$_GET['inputProduct'].'&inputOrigin='.$_GET['inputOrigin'].'&inputDest='.$_GET['inputDest'].'&inputWeight='.$_GET['inputWeight'].'';
-                          base_url('home/proforma?'.$params.'') ?>');
+                        // window.location.replace('<?php
+                        //   $params = 'inputProduct='.$_GET['inputProduct'].'&inputOrigin='.$_GET['inputOrigin'].'&inputDest='.$_GET['inputDest'].'&inputWeight='.$_GET['inputWeight'].'&inputKoli='.$_GET['inputKoli'];
+                        //   base_url('home/proforma?'.$params.'') ?>');
+                        window.location.replace('https://menindo.com/dash/dashboard');
                       }
-                      window.location.replace('<?= base_url('home/proforma?'.$params.'') ?>');
+                      window.location.replace('https://menindo.com/dash/pricelist/topup');
                     })
+                  }else if(data.status == 303){
+                      Swal.fire({
+                        icon: 'info',
+                        title: 'Error...',
+                        text: data.msg,
+                      }).then((result2) => {
+                        if (result2.isConfirmed == true) {
+                          window.location.replace('https://menindo.com/dash/pricelist/topup');
+                        }
+                        window.location.replace('https://menindo.com/dash/pricelist/topup');
+                      })
                   }
                 },
                 error: function(err){
