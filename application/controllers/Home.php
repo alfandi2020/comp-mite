@@ -109,6 +109,7 @@ class Home extends CI_Controller {
 			$price_x = $list['all_in'] * $weight + $tambah_charge;
 			$total = intval($get_user['saldo']) - $price_x;
 			$fee_mite = $price_x * 22 / 100;
+			$net = $price_x - $fee_mite;
 			if ($total < $price_x || $get_user['saldo'] < 1000000) { //kondisi jika saldo kurang dan saldo limit 1jt
 				$msg = [
 					'msg' => 'Saldo kurang,silahkan melakukan topup dan minimal limit saldo Rp.1.000.000',
@@ -124,6 +125,7 @@ class Home extends CI_Controller {
 					"weight" => $weight,
 					"koli" => $koli,
 					"status" => "Waiting",
+					"net" => $net,
 					"fee_mite" => $fee_mite
 				];
 				$this->db->insert('booking',$data);
