@@ -68,7 +68,7 @@ class Home extends CI_Controller {
 		$destination = $this->input->get('inputDest');
 		// $weight = $this->input->get('inputWeight');
 		$weight = $this->input->get('inputWeight');
-		if ($weight > 45) {
+		if ($weight > 30) {
 			$array = array('origin' => $origin, 'destinasi' => $destination);
 			$this->db->where('origin',$origin);
 			$this->db->where('destinasi',$destination);
