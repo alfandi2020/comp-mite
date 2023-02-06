@@ -103,6 +103,7 @@
                                        <?php 
                                        $this->db->where('id', $p->id);
                                        $a = $this->db->get('mite_pricelist')->row_array();
+                                       $b = $this->db->get_where('jenis_product',['nama_inggris' => $this->input->get('inputProduct')])->row_array();
                                        $weight = $this->input->get('inputWeight');
                                        $s_smu_basic = $a['smu_basic'] * $weight;
                                        $s_ppn_smu = $s_smu_basic * 0.11;
@@ -110,11 +111,11 @@
                                        $s_ra = $a['r_a'] * $weight;
                                        $s_warehouse = $a['warehouse'] * $weight;
                                        $s_ihc = $a['ihc'] * $weight;
-                                       $s_handling = $a['handling'] * $weight;
+                                       $s_handling = $b['handling'] * $weight;
 
                                        $s_grandtotal = $s_smu_basic + $s_ppn_smu + $s_ra + $s_warehouse + $s_ihc + $s_handling;
 
-                                       $s_grandtotal2 = $a['all_in'] * $weight;
+                                       $s_grandtotal2 = $a['all_in'] * $weight + $s_handling;
                                        ?>
                                        <tr>
                                           <td>SMU Basic</td>
@@ -148,12 +149,12 @@
                                        <tr>
                                           <td>Handling Charges - Per Kg (Incl. Print Label)</td>
                                           <td align=right><?= number_format($weight) ?> kgs</td>
-                                          <td align=right>Rp <?= number_format($a['handling'])?></td>
+                                          <td align=right>Rp <?= number_format($b['handling'])?></td>
                                           <td align=right>Rp <?=number_format($s_handling)?></td>
                                        </tr>
                                        <tr>
                                           <th colspan=3>Grandtotal</th>
-                                          <td align=right>Rp <?=number_format($s_grandtotal)?></td>
+                                          <td align=right>Rp <?=number_format($s_grandtotal2)?></td>
                                        </tr>
                                     </tbody>
                                  </table>
