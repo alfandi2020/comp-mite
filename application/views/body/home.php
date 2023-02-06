@@ -36,7 +36,7 @@
                 <label for="inputProduct">Jenis Produk</label>
                 <select name="inputProduct" id="" required class="form-control selectpicker" data-live-search="true">
                   <option>Pilih...</option>
-                  <?php $get_product  = $this->db->get_where('jenis_product', ['company' => 'inkoppas','status' => 1])->result();
+                  <?php $get_product  = $this->db->get_where('jenis_product', ['company' => 'inkoppas','status' => '1'])->result();
                   foreach ($get_product as $k) { ?>
                     <option value="<?= $k->nama_inggris ?>"><?= $k->nama ?></option>
                   <?php } ?>
