@@ -33,7 +33,8 @@ class Home extends CI_Controller {
 							'id_user' => $data['id'],
 							'username' => $data['username'],
 							'nama' => $data['nama'],
-							'role' => $data['role']
+							'role' => $data['role'],
+							'company' => $data['company']
 						];
 						$this->session->set_userdata($datax);
 						$this->session->set_flashdata("msg", "<div class='alert alert-success'>Login Berhasil</div>");
