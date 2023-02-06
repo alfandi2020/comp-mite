@@ -99,17 +99,18 @@ class Home extends CI_Controller {
 			$weight = $id_ex[1];
 			$koli  = $id_ex[2];
 			$product_x  = $id_ex[3];
+			$allin = $id_ex[4];
             $list = $this->db->get_where('mite_pricelist',['id' => $id_price])->row_array();
 			$get_user = $this->db->get_where('dt_agent',['id_user' => $this->session->userdata('id_user')])->row_array();
-			$get_product = $this->db->get('jenis_product')->result();
-			foreach ($get_product as $x) {
-				if($product_x == $x->nama_inggris){
-					$tambah_charge = $x->handling;
+			$get_product = $this->db->get('jenis_product',['nama_inggris' => $product_x])->row_array();
+			// foreach ($get_product as $x) {
+				if($product_x == $get_product['nama_inggris']){
+					$tambah_charge = $get_product['handling'];
 				}else{
 					$tambah_charge = 0;
 				}
-			}
-			$price_x = $list['all_in'] * $weight + $tambah_charge;
+			// }
+			$price_x = $list['all_in'] * $weight + $get_product['handling'];
 			$total = intval($get_user['saldo']) - $price_x;
 			$fee_mite = $price_x * 22 / 100;
 			$net = $price_x - $fee_mite;
@@ -124,7 +125,7 @@ class Home extends CI_Controller {
 					"id_user" => $this->session->userdata('id_user'),
 					"id_pricelist" => $id_price,
 					"product" => $product_x,
-					"all_in" => $list['all_in'],
+					"all_in" => $allin,
 					"weight" => $weight,
 					"koli" => $koli,
 					"status" => "Waiting",
