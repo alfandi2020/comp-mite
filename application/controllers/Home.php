@@ -111,7 +111,7 @@ class Home extends CI_Controller {
 					$tambah_charge = 0;
 				}
 			// }
-			$price_x = $list['all_in'] * $weight + $get_product['handling'];
+			$price_x = $allin * $weight + $get_product['handling'];
 			$total = intval($get_user['saldo']) - $price_x;
 			$fee_mite = $price_x * 22 / 100;
 			$net = $price_x - $fee_mite;
