@@ -23,7 +23,7 @@
                       Swal.fire({
                         icon: 'info',
                         title: 'Oops...',
-                        text: 'Berat minimal 45kg'
+                        text: 'Berat minimal 30kg'
                       })
                     })
                 </script>
