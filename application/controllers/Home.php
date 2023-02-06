@@ -101,11 +101,14 @@ class Home extends CI_Controller {
 			$product_x  = $id_ex[3];
             $list = $this->db->get_where('mite_pricelist',['id' => $id_price])->row_array();
 			$get_user = $this->db->get_where('dt_agent',['id_user' => $this->session->userdata('id_user')])->row_array();
-			if($product_x == 'Door to Port'){
-				$tambah_charge = 3000;
-			 }else{
-				$tambah_charge = 0;
-			 }
+			$get_product = $this->db->get('jenis_product')->result();
+			foreach ($get_product as $x) {
+				if($product_x == $x->nama_inggris){
+					$tambah_charge = $x->handling;
+				}else{
+					$tambah_charge = 0;
+				}
+			}
 			$price_x = $list['all_in'] * $weight + $tambah_charge;
 			$total = intval($get_user['saldo']) - $price_x;
 			$fee_mite = $price_x * 22 / 100;

@@ -63,17 +63,20 @@
                            echo $get_des2['kode_destinasi'] . ' ('.$get_des2['destinasi'].')';
                             ?></td>
                            <td align=right>Rp <?php 
-                              if($this->input->get('inputProduct') == 'Door to Port'){
-                                 $tambah_charge = 3000;
-                              }else{
-                                 $tambah_charge = 0;
-                              }
+                           $this->db->where('nama_inggris',$this->input->get('inputProduct'));
+			                     $get_product = $this->db->get('jenis_product')->row_array();
+                                 if($this->input->get('inputProduct') == $get_product['nama_inggris']){
+                                    $tambah_charge = $get_product['handling'];
+                                 }else{
+                                    $tambah_charge = 0;
+                                 }
                           echo number_format(intval($p->all_in) + intval($tambah_charge),2) ?></td>
                            <td align=right><?= $this->input->get('inputWeight') ?></td>
                            <td align=right><?= $this->input->get('inputKoli') ?></td>
                            <td align=right>Rp <?php 
-                           $xx = $p->all_in;
-                          echo number_format($xx*$this->input->get('inputWeight') + $tambah_charge,2) ?></td>
+                           $weight = intval($this->input->get('inputWeight'));
+                           $xx = intval($p->all_in) + $tambah_charge;
+                          echo number_format($xx * $weight,2) ?></td>
                            <td align=center>
                               <?php if ($this->session->userdata('id_user') == true) { ?>
                                  <button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#demo<?= $p->id ?>" class="accordion-toggle">
