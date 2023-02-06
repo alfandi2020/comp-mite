@@ -79,9 +79,9 @@
                           echo number_format($xx * $weight,2) ?></td>
                            <td align=center>
                               <?php if ($this->session->userdata('id_user') == true) { ?>
-                                 <!-- <button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#demo<?= $p->id ?>" class="accordion-toggle">
+                                 <button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#demo<?= $p->id ?>" class="accordion-toggle">
                                     Rincian 
-                                 </button> -->
+                                 </button>
                               <?php } ?>
                               <b id="<?= $p->id.",".$this->input->get('inputWeight').",". $this->input->get('inputKoli') . "," . $this->input->get('inputProduct') ?>" class="btn btn-primary btn-sm booking">Pesan Sekarang!</b>
                               <!-- href="https://menindo.com/dash/booking/b/<?= $p->id?>" -->
