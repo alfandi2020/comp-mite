@@ -38,7 +38,7 @@
                   <option>Pilih...</option>
                   <?php $get_product  = $this->db->get_where('jenis_product', ['company' => 'inkoppas','status' => '1'])->result();
                   foreach ($get_product as $k) { ?>
-                    <option value="<?= $k->nama_inggris ?>"><?= $k->nama ?></option>
+                    <option value="<?= $k->Id ?>"><?= $k->nama ?></option>
                   <?php } ?>
                   <!-- <option value="Port to Port">Bandara Ke Bandara</option>
                   <option value="Port to Door">Bandara Ke Tujuan</option>

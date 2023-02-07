@@ -63,19 +63,19 @@
                            echo $get_des2['kode_destinasi'] . ' ('.$get_des2['destinasi'].')';
                             ?></td>
                            <td align=right>Rp <?php 
-                           $this->db->where('nama_inggris',$this->input->get('inputProduct'));
+                           $this->db->where('Id',$this->input->get('inputProduct'));
 			                     $get_product = $this->db->get('jenis_product')->row_array();
                                  if($this->input->get('inputProduct') == $get_product['nama_inggris']){
                                     $tambah_charge = $get_product['handling'];
                                  }else{
                                     $tambah_charge = 0;
                                  }
-                          echo number_format(intval($p->all_in) + intval($tambah_charge),2) ?></td>
+                          echo number_format(intval($p->all_in) + intval($get_product['handling']),2) ?></td>
                            <td align=right><?= $this->input->get('inputWeight') ?></td>
                            <td align=right><?= $this->input->get('inputKoli') ?></td>
                            <td align=right>Rp <?php 
                            $weight = intval($this->input->get('inputWeight'));
-                           $xx = intval($p->all_in) + $tambah_charge;
+                           $xx = intval($p->all_in) + $get_product['handling'];
                           $total =  number_format($xx * $weight,2);
                           echo $total;
                          $total_x = $xx
@@ -86,7 +86,7 @@
                                     Rincian 
                                  </button>
                               <?php } ?>
-                              <b id="<?= $p->id.",".$this->input->get('inputWeight').",". $this->input->get('inputKoli') . "," . $this->input->get('inputProduct') . ",". $total_x . "," . $tambah_charge ?>" class="btn btn-primary btn-sm booking">Pesan Sekarang!</b>
+                              <b id="<?= $p->id.",".$this->input->get('inputWeight').",". $this->input->get('inputKoli') . "," . $this->input->get('inputProduct') . ",". $total_x . "," . $get_product['handling'] ?>" class="btn btn-primary btn-sm booking">Pesan Sekarang!</b>
                               <!-- href="https://menindo.com/dash/booking/b/<?= $p->id?>" -->
                            </td>
                         </tr>
