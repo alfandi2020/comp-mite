@@ -95,6 +95,7 @@ class Home extends CI_Controller {
     {
         if ($this->session->userdata('id_user') == true) {
             $id = $this->input->post('id_booking');
+			$company = $this->session->userdata('company');
 			$id_ex = explode(',',$id);
 			$id_price = $id_ex[0];
 			$weight = $id_ex[1];
@@ -114,8 +115,13 @@ class Home extends CI_Controller {
 			// }
 			$price_x = $allin * $weight;
 			$total = intval($get_user['saldo']) - $price_x;
-			$fee_mite = $price_x / 100 * 22;
-			$net = $price_x - $fee_mite;
+			if ($company == 'inkoppas') {
+				$fee_mite = $price_x / 100 * 22;
+				$net = $price_x - $fee_mite;
+			}else if ($company == 'umum'){
+				$fee_mite = '';
+				$net = '';
+			}
 			if ($total < $price_x || $get_user['saldo'] < 1000000) { //kondisi jika saldo kurang dan saldo limit 1jt
 				$msg = [
 					'msg' => 'Saldo kurang,silahkan melakukan topup dan minimal limit saldo Rp.1.000.000',
@@ -126,6 +132,7 @@ class Home extends CI_Controller {
 					"role" => 1,//role 1 untuk approve or reject admin
 					"id_user" => $this->session->userdata('id_user'),
 					"id_pricelist" => $id_price,
+					"company" => $company,
 					"product" => $product_x,
 					"all_in" => $allin,
 					"weight" => $weight,
