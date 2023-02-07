@@ -106,7 +106,7 @@
                                        <?php 
                                        $this->db->where('id', $p->id);
                                        $a = $this->db->get('mite_pricelist')->row_array();
-                                       $b = $this->db->get_where('jenis_product',['nama_inggris' => $this->input->get('inputProduct')])->row_array();
+                                       $b = $this->db->get_where('jenis_product',['Id' => $this->input->get('inputProduct')])->row_array();
                                        $weight = $this->input->get('inputWeight');
                                        $s_smu_basic = $a['smu_basic'] * $weight;
                                        $s_ppn_smu = $s_smu_basic * 0.11;
