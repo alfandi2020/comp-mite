@@ -101,19 +101,20 @@ class Home extends CI_Controller {
 			$koli  = $id_ex[2];
 			$product_x  = $id_ex[3];
 			$allin = $id_ex[4];
+			$handling_x = $id_ex[5];
             $list = $this->db->get_where('mite_pricelist',['id' => $id_price])->row_array();
 			$get_user = $this->db->get_where('dt_agent',['id_user' => $this->session->userdata('id_user')])->row_array();
-			$get_product = $this->db->get('jenis_product',['nama_inggris' => $product_x])->row_array();
+			// $get_product = $this->db->get('jenis_product',['nama_inggris' => $product_x])->row_array();
 			// foreach ($get_product as $x) {
-				if($product_x == $get_product['nama_inggris']){
-					$tambah_charge = $get_product['handling'];
-				}else{
-					$tambah_charge = 0;
-				}
+				// if($product_x == $get_product['nama_inggris']){
+				// 	$tambah_charge = $get_product['handling'];
+				// }else{
+				// 	$tambah_charge = 0;
+				// }
 			// }
-			$price_x = $allin * $weight + $get_product['handling'];
+			$price_x = $allin * $weight;
 			$total = intval($get_user['saldo']) - $price_x;
-			$fee_mite = $price_x * 22 / 100;
+			$fee_mite = $price_x / 100 * 22;
 			$net = $price_x - $fee_mite;
 			if ($total < $price_x || $get_user['saldo'] < 1000000) { //kondisi jika saldo kurang dan saldo limit 1jt
 				$msg = [
@@ -131,7 +132,8 @@ class Home extends CI_Controller {
 					"koli" => $koli,
 					"status" => "Waiting",
 					"net" => $net,
-					"fee_mite" => $fee_mite
+					"fee_mite" => $fee_mite,
+					"handling" => $handling_x
 				];
 				$this->db->insert('booking',$data);
 

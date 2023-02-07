@@ -86,7 +86,7 @@
                                     Rincian 
                                  </button>
                               <?php } ?>
-                              <b id="<?= $p->id.",".$this->input->get('inputWeight').",". $this->input->get('inputKoli') . "," . $this->input->get('inputProduct') . ",". $total_x ?>" class="btn btn-primary btn-sm booking">Pesan Sekarang!</b>
+                              <b id="<?= $p->id.",".$this->input->get('inputWeight').",". $this->input->get('inputKoli') . "," . $this->input->get('inputProduct') . ",". $total_x . "," . $tambah_charge ?>" class="btn btn-primary btn-sm booking">Pesan Sekarang!</b>
                               <!-- href="https://menindo.com/dash/booking/b/<?= $p->id?>" -->
                            </td>
                         </tr>
